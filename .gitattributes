@@ -1,0 +1,6 @@
+*.key filter=git-crypt diff=git-crypt
+*.password filter=git-crypt diff=git-crypt
+*.tfstate filter=git-crypt diff=git-crypt
+*/CONFIG/* filter=git-crypt diff=git-crypt
+terraform/keys.* filter=git-crypt diff=git-crypt
+override.tf filter=git-crypt diff=git-crypt
