@@ -5,8 +5,6 @@ These samples are configured to use a locally built Ioto with all services enabl
 
 The Makefiles assume GCC/Clang on Linux or Mac.
 
-* Ioto - [https://admin.embedthis.com/](https://admin.embedthis.com)
-
 The following samples are available:
 
 * [aws-s3](aws-s3/README.md)                            Send a file to AWS S3
@@ -22,6 +20,10 @@ The following samples are available:
 * [web-upload](web-upload/README.md)                    How to receive file upload requests
 
 ### Building
+
+You will need to download and build Ioto and then modify the defines.mk to point to your Ioto directory.
+
+* Ioto - [https://admin.embedthis.com/](https://admin.embedthis.com)
 
 To build the samples, see the per-sample README instructions. Many can run without extra build steps.
 
