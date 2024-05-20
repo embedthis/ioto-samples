@@ -10,7 +10,7 @@
 
 /************************************* Code ***********************************/
 
-PUBLIC int ioStart()
+PUBLIC int ioStart(void)
 {
     char   *data;
 
@@ -22,6 +22,8 @@ PUBLIC int ioStart()
     rStop();
     return 0;
 }
+
+PUBLIC void ioStop(void) {}
 
 /*
     Copyright (c) Embedthis Software. All Rights Reserved.

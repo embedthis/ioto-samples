@@ -32,13 +32,11 @@ PUBLIC int ioStart(void)
     return 0;
 }
 
-
 static void standAloneThread(void)
 {
     //  MUST NOT call Ioto routines here, they are not thread safe
     printf("In standAloneThread\n");
 }
-
 
 static cchar *cooperatingThread(void)
 {
@@ -46,6 +44,7 @@ static cchar *cooperatingThread(void)
     return "Thread complete";
 }
 
+PUBLIC void ioStop(void) {}
 
 /*
     Copyright (c) Embedthis Software. All Rights Reserved.

@@ -20,6 +20,7 @@ PUBLIC int ioStart(void)
     return 0;
 }
 
+PUBLIC void ioStop(void) {}
 
 /*
     Copyright (c) Embedthis Software. All Rights Reserved.

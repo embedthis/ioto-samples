@@ -44,10 +44,11 @@ static void upload(Web *web)
             printf("Upload form var %s = %s\n", upload->name, webGetVar(web, upload->name, "null"));
         }
     }
-    webResponse(web, 200, "Done");
+    webWriteResponse(web, 200, "Done");
     //  The web server will remove the uploaded file temporary automatically.
 }
 
+PUBLIC void ioStop(void) {}
 
 /*
     Copyright (c) Embedthis Software. All Rights Reserved.

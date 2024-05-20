@@ -37,6 +37,7 @@ PUBLIC int ioStart(void)
     return 0;
 }
 
+PUBLIC void ioStop() {}
 
 static void incoming(MqttRecv *rp)
 {

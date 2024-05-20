@@ -47,7 +47,7 @@ static void start(void *arg)
     ssize   nbytes;
     int     status;
 
-    up = urlAlloc();
+    up = urlAlloc(0);
 
     /*
         Set roots so we can verify the peer certificate.

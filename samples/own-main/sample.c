@@ -8,15 +8,18 @@
 
 #include "ioto.h"
 
-/*********************************** Forwards *********************************/
-
-static void start(void *arg);
-
 /************************************* Code ***********************************/
 
 int main(int argc, char **argv)
 {
-    rInit(start, 0, 0);
+    if (rInit(NULL, NULL, 0) < 0) {
+        fprintf(stderr, "Cannot initialize runtime");
+        exit(2);
+    }
+    if (rSpawnFiber((RFiberProc) ioInit, NULL) < 0) {
+        fprintf(stderr, "ioto: Cannot initialize runtime\n");
+        exit(1);
+    }
 
     //  Block until instructed to exit
     rServiceEvents();
@@ -26,21 +29,18 @@ int main(int argc, char **argv)
     return 0;
 }
 
-
 /*
     Start processing. This runs in a fiber.
 */
-static void start(void *arg)
+PUBLIC int ioStart()
 {
-    //  This will block while initializing. Other fibers continue to run.
-    //  Because we don't have a ioto.json5, no services will be started.
-    ioInit(0);
-
     rInfo("sample", "Hello World\n");
-
     //  Exit the sample
     rStop();
+    return 0;
 }
+
+PUBLIC void ioStop(void) {}
 
 /*
     Copyright (c) Embedthis Software. All Rights Reserved.

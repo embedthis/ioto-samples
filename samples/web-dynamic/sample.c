@@ -44,7 +44,7 @@ static int start(void)
         rFree(error);
         return R_ERR_CANT_READ;
     }
-    host = webAllocHost(config);
+    host = webAllocHost(config, 0);
     webAddAction(host, "/test", testAction, 0);
     webStartHost(host);
     return 0;
